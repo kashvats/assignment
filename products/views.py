@@ -53,6 +53,8 @@ class ProductAPI(APIView):
             return Response({"message":"product does not Exist"},status=status.HTTP_200_OK)
         
 class productAPIView(APIView):
+
+    "this api will get every product that was created"
     
     def get(self,request):
         queryset = product.objects.all()
@@ -63,7 +65,7 @@ class productAPIView(APIView):
 
 
 class LoginView(APIView):
-
+    
     def post(self, request):
         email = request.data.get('email')
         password = request.data.get('password')
